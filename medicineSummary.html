@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    margin-top: 0;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+  }
+  select {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    border: 1px solid #ddd;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+  a{
+    color: white;
+  }
+</style>
+<title>Medication Summary</title>
+</head>
+<body>
+  <header>
+    <h1>Medication Summary</h1>
+    <a href="home.html">HOME</a>
+  </header>
+  <div class="container">
+    <label for="dateFilter">Select Date:</label>
+    <select id="dateFilter">
+      <option value="">All Dates</option>
+      <option value="2023-08-25">August 25, 2023</option>
+      <option value="2023-08-24">August 24, 2023</option>
+      <!-- Add more options as needed -->
+    </select>
+    
+    <label><b>Medication Name</b></label>
+    <ul id="medicationList">
+      <li data-date="2023-08-25">
+        <strong>Medication:</strong> Medication A<br>
+        <strong>Date:</strong> August 25, 2023<br>
+        <strong>Dosage:</strong> 1 tablet<br>
+      </li>
+      <li data-date="2023-08-24">
+        <strong>Medication:</strong> Medication B<br>
+        <strong>Date:</strong> August 24, 2023<br>
+        <strong>Dosage:</strong> 2 tablets<br>
+      </li>
+      <!-- Add more medication entries as needed -->
+    </ul>
+  </div>
+  <script>
+    const dateFilter = document.getElementById('dateFilter');
+    const medicationList = document.getElementById('medicationList').getElementsByTagName('li');
+
+    dateFilter.addEventListener('change', function() {
+      const selectedDate = dateFilter.value;
+      for (let i = 0; i < medicationList.length; i++) {
+        const medicationDate = medicationList[i].getAttribute('data-date');
+        if (selectedDate === '' || medicationDate === selectedDate) {
+          medicationList[i].style.display = 'block';
+        } else {
+          medicationList[i].style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    margin-top: 0;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+  }
+  input[type="file"] {
+    margin-top: 0.5rem;
+  }
+  .past-consultations {
+    margin-top: 2rem;
+  }
+  .consultation-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+  }
+</style>
+<title>Doctor Consultation Remarks</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Doctor Consultation Remarks</h1>
+  </div>
+  <div class="container">
+    <h2>Upload Consultation Notes</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <label for="uploadDate">Date:</label>
+      <input type="date" id="uploadDate" name="uploadDate" required>
+      <label for="notes">Notes:</label>
+      <textarea id="notes" name="notes" rows="4" required></textarea>
+      <label for="advice">Advice:</label>
+      <textarea id="advice" name="notes" rows="4" required></textarea>
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file">
+      <button type="submit">Upload</button>
+    </form>
+    
+    <div class="past-consultations">
+      <h2>Past Consultations</h2>
+      <div class="consultation-item">
+        <strong>Date:</strong> August 25, 2023<br>
+        <strong>Notes:</strong> constipation<br>
+        <strong>Medical Advice:</strong> balanced diet <br>
+        <a href="#">Download File</a>
+      </div>
+      <div class="consultation-item">
+        <strong>Date:</strong> August 24, 2023<br>
+        <strong>Notes:</strong> constipation<br>
+        <strong>Medical Advice:</strong> balanced diet <br>
+        <a href="#">Download File</a>
+      </div>
+      <!-- Add more past consultations as needed -->
+    </div>
+  </div>
+</body>
+</html>

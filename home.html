@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .card {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .card h2 {
+    margin-top: 0;
+  }
+  .card p {
+    margin: 0.5rem 0;
+  }
+</style>
+<title>Patient Portal</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Welcome to your portal</h1>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h2>Test Results</h2>
+      <p>View your latest test results and medical reports.</p>
+      <a href="testresult.html">View Test Results</a>
+    </div>
+    <div class="card">
+      <h2>Demographics</h2>
+      <p>Access and update your personal information.</p>
+      <a href="patientDemographics.html">View Demographics</a>
+    </div>
+    <div class="card">
+      <h2>Vaccination History</h2>
+      <p>Check your vaccination records and history.</p>
+      <a href="vaccinationHistory.html">View Vaccination History</a>
+    </div>
+    <div class="card">
+      <h2>Medication Summary</h2>
+      <p>View details about your prescribed medications.</p>
+      <a href="medicineSummary.html">View Medication Summary</a>
+    </div>
+  </div>
+</body>
+</html>

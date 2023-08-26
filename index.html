@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Drug Interactions</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/interaction_checker_in_jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btn").click(function(){
+          $("#patientInfo").hide();
+          
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Medication Interaction Checker</h1>
+    </header>
+    <main>
+      <p id="padding_top">This is an interaction checker for psychoactive medications.
+      </p>
+      <div id="patientInfo">
+        <label>ABHA ID</label>
+        <input type="text" name="abhaID" required minlength="14" maxlength="14">
+        <button class="submitbtn" type="submit" id="btn">SUBMIT</button>
+      </div>
+      <div class="forms">
+        <form id="interactionChecker">
+          <legend>Select type of medication #1</legend><br>
+          <input type="radio" name="drugClass" id="type_anti_anxiety">
+            Anti-Anxiety
+          </label><br>
+          <input type="radio" name="drugClass" id="type_anti_convulsant">
+            Anti-Convulsant
+          </label><br>
+          <input type="radio" name="drugClass" id="type_anti_depressant">
+            Anti-Depressant
+          </label><br>
+          <input type="radio" name="drugClass" id="type_anti_psychotic">
+            Anti-Psychotic
+          </label><br>
+          <input type="radio" name="drugClass" id="type_pain_medication">
+            Pain Medication
+          </label><br>
+          <input type="radio" name="drugClass" id="type_sleep_medication">
+            Sleep Medication
+          </label><br>
+          <input type="radio" name="drugClass" id="type_stimulants_adhd_medication">
+            Stimulant/ADHD Medication
+          </label><br>
+          <!--Anti-Anxiety-->
+          <fieldset>
+            <div id="anti_anxiety">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Anxiety</label><br>
+              <input id="alprazolam" type="checkbox" value="Alprazolam">Alprazolam(Alprazolam Intensol, Niravam, Xanax)<br>
+              <input id="buspirone" type="checkbox" value="Buspirone">Buspirone(BuSpar)<br>
+              <input id="chlordiazepoxide" type="checkbox" value="Chlordiazepoxide">Chlordiazepoxide(Librium, Limbitrol)<br>
+              <input id="clonazepam" type="checkbox" value="Clonazepam">Clonazepam(Klonopin)<br>
+              <input id="diazepam" type="checkbox" value="Diazepam">Diazepam(Diazepam Intensol, Valium)<br>
+              <input id="escitalopram" type="checkbox" value="Escitalopram">Escitalopram(Lexapro)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="hydroxyzine" type="checkbox" value="Hydroxyzine">Hydroxyzine(Atarax, Hyzine, Vistaril)<br>
+              <input id="lorazepam" type="checkbox" value="Lorazepam">Lorazepam(Ativan)<br>
+            </div>
+            <!--Anti-Convulsant-->
+            <div id="anti_convulsant">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Convulsant</label><br>
+              <input id="chlordiazepoxide" type="checkbox" value="Chlordiazepoxide">Chlordiazepoxide(Librium, Limbitrol)<br>
+              <input id="clobazam" type="checkbox" value="Clobazam">Clobazam(Onfi)<br>
+              <input id="clonazepam" type="checkbox" value="Clonazepam">Clonazepam(Klonopin)<br>
+              <input id="clorazepate" type="checkbox" value="Clorazepate">Clorazepate(Tranxene)<br>
+              <input id="diazepam" type="checkbox" value="Diazepam">Diazepam(Diazepam Intensol)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="midazolam" type="checkbox" value="Midazolam">Midazolam(Dormicum, Hypnovel)<br>
+              <input id="pregabalin" type="checkbox" value="Pregabalin">Pregabalin(Lyrica)<br>
+            </div>
+            <!--Anti-Depressant-->
+            <div id="anti_depressant">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Depressant</label><br>
+              <input id="amitriptyline" type="checkbox" value="Amitriptyline">Amitriptyline(Elavil)<br>
+              <input id="amoxapine" type="checkbox" value="Amoxapine">Amoxapine<br>
+              <input id="bupropion" type="checkbox" value="Bupropion">Bupropion(Wellbutrin)<br>
+              <input id="citalopram" type="checkbox" value="Citalopram">Citalopram(Celexa)<br>
+              <input id="doxepin" type="checkbox" value="Doxepin">Doxepin(Sinequan)<br>
+              <input id="escitalopram" type="checkbox" value="Escitalopram">Escitalopram(Lexapro)<br>
+              <input id="fluoxetine" type="checkbox" value="Fluoxetine">Fluoxetine(Prozac)<br>
+              <input id="mirtazepine" type="checkbox" value="Mirtazepine">Mirtazepine(Remeron)<br>
+              <input id="sertraline" type="checkbox" value="Sertraline">Sertraline(Zoloft)<br>
+            </div>
+            <!--Anti-Psychotic-->
+            <div id="anti_psychotic">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Psychotic</label><br>
+              <input id="benperidol" type="checkbox" value="Benperidol">Benperidol(Glianimon)<br>
+              <input id="bromperidol" type="checkbox" value="Bromperidol">Bromperidol(Elavil)<br>
+              <input id="fluspirilen" type="checkbox" value="Fluspirilen">Fluspirilen(Fluspi, Fluspirilen Beta, Imap)<br>
+              <input id="haloperidol" type="checkbox" value="Haloperidol">Haloperidol(Haldol, Serenase)<br>
+              <input id="perphenazine" type="checkbox" value="Perphenazine">Perphenazine(Trilafon)<br>
+              <input id="pimozide" type="checkbox" value="Pimozide">Pimozide(Orap)<br>
+              <input id="promethazine" type="checkbox" value="Promethazine">Promethazine(Atosil, Closin, Proneurin, Prothazin)<br>
+              <input id="sulpiride" type="checkbox" value="Sulpiride">Sulpiride(Dogmatil, Sulpirid)<br>
+              <input id="thioridazine" type="checkbox" value="Thioridazine">Thioridazine(Mellaril, Thioridazin Neuraxph.)<br>
+            </div>
+            <!--Pain Medication-->
+            <div id="pain_medication">
+              <h2>Choose one medication</h2><br>
+              <label>Pain Medication</label><br>
+              <input id="butalbital" type="checkbox" value="Butalbital">Butalbital, Acetaminophen, and Caffeine(Femcet, Fioricet, Esgic)<br>
+              <input id="codeine" type="checkbox" value="Codeine">Codeine<br>
+              <input id="dihydrocodeine" type="checkbox" value="Dihydrocodeine">Dihydrocodeine, Acetaminophen, and Caffeine(DHCplus)<br>
+              <input id="fentanyl" type="checkbox" value="Fentanyl">Fentanyl(Actiq, Duragesic, Fentora)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="hydrocodone" type="checkbox" value="Hydrocodone">Hydrocodone/acetaminophen(Lorcet, Lortab, Norco, Vicodin)<br>
+              <input id="oxycodone" type="checkbox" value="Oxycodone">Oxycodone(OxyContin, Oxecta, Roxicodone)<br>
+              <input id="pregabalin" type="checkbox" value="Pregabalin">Pregabalin(Lyrica)<br>
+              <input id="tramadol" type="checkbox" value="Tramadol">Tramadol(ConZip, Ryzolt, Ultram)<br>
+            </div>
+            <!--Sleep medication-->
+            <div id="sleep_medication">
+              <h2>Choose one medication</h2><br>
+              <label>Sleep Medication</label><br>
+              <input id="doxepin" type="checkbox" value="Zolpidem">Zolpidem(Ambien)<br>
+              <input id="estazolam" type="checkbox" value="Estazolam">Estazolam(Prosom)<br>
+              <input id="eszopiclone" type="checkbox" value="Eszopliclone">Eszopliclone(Lunesta)<br>
+              <input id="melatonin" type="checkbox" value="Melatonin">Melatonin<br>
+              <input id="ramelteon" type="checkbox" value="Ramelteon">Ramelteon(Rozeram)<br>
+              <input id="temazepam" type="checkbox" value="Temazepam">Temazepam(Restoril)<br>
+              <input id="zaleplon" type="checkbox" value="Zaleplon">Zaleplon(Sonata)<br>
+            </div>
+            <!--Stimulants/ADHD Medications-->
+            <div id="stimulants_adhd_medication">
+              <h2>Choose one medication</h2><br>
+              <label>Stimulants/ADHD Medication</label><br>
+              <input id="amphetamine" type="checkbox" value="Amphetamine">Amphetamine(Adderall)<br>
+              <input id="atomoxetine" type="checkbox" value="Atomoxetine">Atomoxetine(Strattera)<br>
+              <input id="bupropion" type="checkbox" value="Bupropion">Bupropion(Wellbutrin)<br>
+              <input id="dexmethylphenidate" type="checkbox" value="Dexmethylphenidate">Dexmethylphenidate(Addenade, Focalin)<br>
+              <input id="dextroamphetamine" type="checkbox" value="Dextroamphetamine">Dextroamphetamine(Dexedrine, Dextrostat)<br>
+              <input id="lis-dexamphetamine" type="checkbox" value="Lis-Dexamphetamine">Lis-Dexamphetamine(Vyvanse)<br>
+              <input id="methylphenidate" type="checkbox" value="Methylphenidate">Methylphenidate(Concerta, Methyin, Ritalin)<br>
+            </div>
+          </fieldset>
+        </form>
+
+        <!--Second drug radio form-->
+
+        <form>
+          <legend>Select type of medication #2</legend><br>
+          <input type="radio" name="drugClass" id="type_anti_anxiety_2">
+            Anti-Anxiety
+          </label><br>
+          <input type="radio" name="drugClass" id="type_anti_convulsant_2">
+            Anti-Convulsant
+          </label><br>
+          <input type="radio" name="drugClass" id="type_anti_depressant_2">
+            Anti-Depressant
+          </label><br>
+          <input type="radio" name="drugClass"id="type_anti_psychotic_2">
+            Anti-Psychotic
+          </label><br>
+          <input type="radio" name="drugClass" id="type_pain_medication_2">
+            Pain Medication
+          </label><br>
+          <input type="radio" name="drugClass" id="type_sleep_medication_2">
+            Sleep Medication
+          </label><br>
+          <input type="radio" name="drugClass" id="type_stimulants_adhd_medication_2">
+            Stimulant/ADHD Medication
+          </label><br>
+          <!--Anti-Anxiety-->
+          <fieldset>
+            <div id="anti_anxiety_2">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Anxiety</label><br>
+              <input id="alprazolam" type="checkbox" value="Alprazolam">Alprazolam(Alprazolam Intensol, Niravam, Xanax)<br>
+              <input id="buspirone" type="checkbox" value="Buspirone">Buspirone(BuSpar)<br>
+              <input id="chlordiazepoxide" type="checkbox" value="Chlordiazepoxide">Chlordiazepoxide(Librium, Limbitrol)<br>
+              <input id="clonazepam" type="checkbox" value="Clonazepam">Clonazepam(Klonopin)<br>
+              <input id="diazepam" type="checkbox" value="Diazepam">Diazepam(Diazepam Intensol, Valium)<br>
+              <input id="escitalopram" type="checkbox" value="Escitalopram">Escitalopram(Lexapro)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="hydroxyzine" type="checkbox" value="Hydroxyzine">Hydroxyzine(Atarax, Hyzine, Vistaril)<br>
+              <input id="lorazepam" type="checkbox" value="Lorazepam">Lorazepam(Ativan)<br>
+            </div>
+            <!--Anti-Convulsant-->
+            <div id="anti_convulsant_2">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Convulsant</label><br>
+              <input id="chlordiazepoxide" type="checkbox" value="Chlordiazepoxide">Chlordiazepoxide(Librium, Limbitrol)<br>
+              <input id="clobazam" type="checkbox" value="Clobazam">Clobazam(Onfi)<br>
+              <input id="clonazepam" type="checkbox" value="Clonazepam">Clonazepam(Klonopin)<br>
+              <input id="clorazepate" type="checkbox" value="Clorazepate">Clorazepate(Tranxene)<br>
+              <input id="diazepam" type="checkbox" value="Diazepam">Diazepam(Diazepam Intensol)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="midazolam" type="checkbox" value="Midazolam">Midazolam(Dormicum, Hypnovel)<br>
+              <input id="pregabalin" type="checkbox" value="Pregabalin">Pregabalin(Lyrica)<br>
+            </div>
+            <!--Anti-Depressant-->
+            <div id="anti_depressant_2">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Depressant</label><br>
+              <input id="amitriptyline" type="checkbox" value="Amitriptyline">Amitriptyline(Elavil)<br>
+              <input id="amoxapine" type="checkbox" value="Amoxapine">Amoxapine<br>
+              <input id="bupropion" type="checkbox" value="Bupropion">Bupropion(Wellbutrin)<br>
+              <input id="citalopram" type="checkbox" value="Citalopram">Citalopram(Celexa)<br>
+              <input id="doxepin" type="checkbox" value="Doxepin">Doxepin(Sinequan)<br>
+              <input id="escitalopram" type="checkbox" value="Escitalopram">Escitalopram(Lexapro)<br>
+              <input id="fluoxetine" type="checkbox" value="Fluoxetine">Fluoxetine(Prozac)<br>
+              <input id="mirtazepine" type="checkbox" value="Mirtazepine">Mirtazepine(Remeron)<br>
+              <input id="sertraline" type="checkbox" value="Sertraline">Sertraline(Zoloft)<br>
+            </div>
+            <!--Anti-Psychotic-->
+            <div id="anti_psychotic_2">
+              <h2>Choose one medication</h2><br>
+              <label>Anti-Psychotic</label><br>
+              <input id="benperidol" type="checkbox" value="Benperidol">Benperidol(Glianimon)<br>
+              <input id="bromperidol" type="checkbox" value="Bromperidol">Bromperidol(Elavil)<br>
+              <input id="fluspirilen" type="checkbox" value="Fluspirilen">Fluspirilen(Fluspi, Fluspirilen Beta, Imap)<br>
+              <input id="haloperidol" type="checkbox" value="Haloperidol">Haloperidol(Haldol, Serenase)<br>
+              <input id="perphenazine" type="checkbox" value="Perphenazine">Perphenazine(Trilafon)<br>
+              <input id="pimozide" type="checkbox" value="Pimozide">Pimozide(Orap)<br>
+              <input id="promethazine" type="checkbox" value="Promethazine">Promethazine(Atosil, Closin, Proneurin, Prothazin)<br>
+              <input id="sulpiride" type="checkbox" value="Sulpiride">Sulpiride(Dogmatil, Sulpirid)<br>
+              <input id="thioridazine" type="checkbox" value="Thioridazine">Thioridazine(Mellaril, Thioridazin Neuraxph.)<br>
+            </div>
+            <!--Pain Medication-->
+            <div id="pain_medication_2">
+              <h2>Pain one Medication</h2><br>
+              <input id="butalbital" type="checkbox" value="Butalbital">Butalbital, Acetaminophen, and Caffeine(Femcet, Fioricet, Esgic)<br>
+              <input id="codeine" type="checkbox" value="Codeine">Codeine<br>
+              <input id="dihydrocodeine" type="checkbox" value="Dihydrocodeine">Dihydrocodeine, Acetaminophen, and Caffeine(DHCplus)<br>
+              <input id="fentanyl" type="checkbox" value="Fentanyl">Fentanyl(Actiq, Duragesic, Fentora)<br>
+              <input id="gabapentin" type="checkbox" value="Gabapentin">Gabapentin(Neurontin)<br>
+              <input id="hydrocodone" type="checkbox" value="Hydrocodone">Hydrocodone/acetaminophen(Lorcet, Lortab, Norco, Vicodin)<br>
+              <input id="oxycodone" type="checkbox" value="Oxycodone">Oxycodone(OxyContin, Oxecta, Roxicodone)<br>
+              <input id="drug" type="checkbox" value="Pregabalin">Pregabalin(Lyrica)<br>
+              <input id="tramadol" type="checkbox" value="Tramadol">Tramadol(ConZip, Ryzolt, Ultram)<br>
+            </div>
+            <!--Sleep medication-->
+            <div id="sleep_medication_2">
+              <h2>Choose one medication</h2><br>
+              <label>Sleep Medication</label><br>
+              <input id="doxepin" type="checkbox" value="Zolpidem">Zolpidem(Ambien)<br>
+              <input id="estazolam" type="checkbox" value="Estazolam">Estazolam(Prosom)<br>
+              <input id="eszopiclone" type="checkbox" value="Eszopliclone">Eszopliclone(Lunesta)<br>
+              <input id="melatonin" type="checkbox" value="Melatonin">Melatonin<br>
+              <input id="ramelteon" type="checkbox" value="Ramelteon">Ramelteon(Rozeram)<br>
+              <input id="temazepam" type="checkbox" value="Temazepam">Temazepam(Restoril)<br>
+              <input id="drug" type="checkbox" value="Zaleplon">Zaleplon(Sonata)<br>
+            </div>
+            <!--Stimulants/ADHD Medications-->
+            <div id="stimulants_adhd_medication_2">
+              <h2>Choose one medication</h2><br>
+              <label>Stimulants/ADHD Medication</label><br>
+              <input id="amphetamine" type="checkbox" value="Amphetamine">Amphetamine(Adderall)<br>
+              <input id="atomoxetine" type="checkbox" value="Atomoxetine">Atomoxetine(Strattera)<br>
+              <input id="bupropion" type="checkbox" value="Bupropion">Bupropion(Wellbutrin)<br>
+              <input id="dexmethylphenidate" type="checkbox" value="Dexmethylphenidate">Dexmethylphenidate(Addenade, Focalin)<br>
+              <input id="dextroamphetamine" type="checkbox" value="Dextroamphetamine">Dextroamphetamine(Dexedrine, Dextrostat)<br>
+              <input id="lis-dexamphetamine" type="checkbox" value="Lis-Dexamphetamine">Lis-Dexamphetamine(Vyvanse)<br>
+              <input id="methylphenidate" type="checkbox" value="Methylphenidate">Methylphenidate(Concerta, Methyin, Ritalin)<br>
+            </div>
+          </fieldset>
+        </form>
+        <input id="submit" type="submit" value="Check">
+      </div>
+      <h3>
+        Medication Class Interactions: <span id="combo"></span>
+      </h3>
+      <div id="padding_left_and_bottom">
+        <ul>
+          <li><h3 id="no_bottom">Medication Interactions for drugs:</h3></li>
+          <li id="0"></li>
+          <li id="1"></li><br>
+          <li id="drugInteraction0"></li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
