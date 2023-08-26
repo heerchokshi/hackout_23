@@ -1,0 +1,79 @@
+.forms {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#patientInfo{
+    padding-left: 10px;
+}
+#no_bottom {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+#padding_left_and_bottom {
+  padding-left: 10px;
+  padding-bottom: .1px;
+}
+
+#padding_top {
+  padding-top: .5em;
+}
+
+#submit {
+  font-size: 100%;
+  margin-top: 1em;
+}
+
+body {
+  background-color: #94C9FF
+}
+
+fieldset {
+  border-color: #9091E5;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 3px;
+}
+
+header {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0;
+  margin-top: .33em;
+}
+
+h3 {
+  padding-left: 10px;
+}
+
+label {
+  font-size: 125%;
+}
+
+li {
+  list-style: none;
+}
+
+legend {
+  font-size: 150%;
+  margin-top: .5em;
+}
+
+main {
+  background-color: #FFF;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+p {
+  margin: auto 1em 1em 1em;
+  text-indent: 50px;
+}
+
+ul {
+  padding-left: 0;
+}
